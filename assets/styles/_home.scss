@@ -3,8 +3,19 @@
     color: rgb(70, 70, 70);
 
     @media (prefers-color-scheme: dark) {
-        background-color: #2F3A3B;
-        color: #E2EDEE;
+        background-color: rgb(20, 20, 20);
+        color: rgb(200, 200, 200);
+    }
+}
+
+&-heading {
+    max-width: 80ch;
+    margin: auto;
+    margin-top: 20vh;
+    margin-bottom: 5vh;
+
+    h1 {
+        font-size: 2rem;
     }
 }
 
@@ -16,11 +27,18 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: app-spacing(4);
+    margin-bottom: 20vh;
+
+    p {
+        line-height: 1.66;
+    }
 
     ul { 
         margin: 0; 
         padding: 0; 
-        list-style-position: inside;
+        list-style-type: none;
+        text-align: right;
+        line-height: 1.66;
     }
 }
 
@@ -29,8 +47,11 @@
     max-width: 80ch;
     margin: auto;
     margin-bottom: app-spacing(4);
+    margin-bottom: 20vh;
 
     &__item {
+        margin-bottom: app-spacing(6);
+
         &-images {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
