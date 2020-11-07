@@ -1,0 +1,3 @@
+@function app-spacing($multiplier) {
+	@return $multiplier * 5 + px;
+}

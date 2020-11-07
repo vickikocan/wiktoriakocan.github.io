@@ -1,0 +1,94 @@
+.app-body {
+  margin: 30px;
+}
+
+.app-navigation {
+  display: block;
+  width: 100%;
+  max-width: 80ch;
+  margin: auto;
+  margin-top: 20vh;
+  margin-bottom: 20px;
+}
+
+.app-navigation a {
+  position: relative;
+  font-size: 0.6rem;
+  letter-spacing: 2;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: currentColor;
+  padding: 5px 0;
+  opacity: .65;
+}
+
+.app-navigation a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: currentColor;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+}
+
+.app-navigation a:hover {
+  opacity: 1;
+}
+
+.app-navigation a:hover::before {
+  bottom: -5px;
+  opacity: 1;
+}
+
+.app-heading {
+  max-width: 80ch;
+  margin: auto;
+  margin-bottom: 20vh;
+}
+
+.app-heading h1 {
+  font-size: 4rem;
+}
+
+.app-image {
+  display: block;
+  width: 100%;
+  max-width: 1500px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.app-content {
+  max-width: 80ch;
+  margin: auto;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.zara-body {
+  background-color: #E2EDEE;
+  color: #2F3A3B;
+}
+
+@media (prefers-color-scheme: dark) {
+  .zara-body {
+    background-color: #2F3A3B;
+    color: #E2EDEE;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+/*# sourceMappingURL=styles.css.map */
