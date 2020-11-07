@@ -1,0 +1,52 @@
+&-body {
+    background-color: rgb(240, 240, 240);
+    color: rgb(70, 70, 70);
+
+    @media (prefers-color-scheme: dark) {
+        background-color: #2F3A3B;
+        color: #E2EDEE;
+    }
+}
+
+&-information {
+    width: 100%;
+    max-width: 80ch;
+    margin: auto;
+    margin-bottom: app-spacing(4);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: app-spacing(4);
+
+    ul { 
+        margin: 0; 
+        padding: 0; 
+        list-style-position: inside;
+    }
+}
+
+&-portfolio {
+    width: 100%;
+    max-width: 80ch;
+    margin: auto;
+    margin-bottom: app-spacing(4);
+
+    &__item {
+        &-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            img {
+                display: block;
+                width: 100%;
+
+                &:nth-of-type(2) {
+                    filter: brightness(0.8) saturate(0.8);
+                }
+
+                &:nth-of-type(3) {
+                    filter: brightness(0.6) saturate(0.6);
+                }
+            }
+        }
+    }
+}
