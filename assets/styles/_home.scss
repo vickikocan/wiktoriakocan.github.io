@@ -3,8 +3,8 @@
     color: rgb(70, 70, 70);
 
     @media (prefers-color-scheme: dark) {
-        background-color: rgb(20, 20, 20);
-        color: rgb(200, 200, 200);
+        background-color: rgb(20, 25, 25);
+        color: rgb(220, 220, 220);
     }
 }
 
@@ -15,7 +15,7 @@
     margin-bottom: 5vh;
 
     h1 {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 }
 
@@ -30,6 +30,7 @@
     margin-bottom: 20vh;
 
     p {
+        font-size: 1.3rem;
         line-height: 1.66;
     }
 
@@ -38,7 +39,16 @@
         padding: 0; 
         list-style-type: none;
         text-align: right;
-        line-height: 1.66;
+        line-height: 2;
+        
+        a {
+            color: currentColor;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }
 
@@ -50,24 +60,53 @@
     margin-bottom: 20vh;
 
     &__item {
-        margin-bottom: app-spacing(6);
+        display: block;
+        margin-bottom: 10vh;
+        color: currentColor;
+        text-decoration: none;
 
         &-images {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
+            pointer-events: none;
 
             img {
                 display: block;
                 width: 100%;
+                margin-bottom: app-spacing(4);
 
                 &:nth-of-type(2) {
-                    filter: brightness(0.8) saturate(0.8);
+                    filter: saturate(0.8);
+                    opacity: 0.8;
                 }
 
                 &:nth-of-type(3) {
-                    filter: brightness(0.6) saturate(0.6);
+                    filter: saturate(0.6);
+                    opacity: 0.6;
                 }
             }
+        }
+
+        &-title {
+            font-size: 2rem;
+        }
+
+        &-subtitle {
+            font-size: 1rem;
+            opacity: .7;
+            margin-left: app-spacing(1);
+        }
+
+        &:hover {
+            filter: brightness(1.2);
+
+            .home-portfolio__item-title {
+                text-decoration: underline;
+            }
+        }
+
+        &:active {
+            filter: brightness(0.8);
         }
     }
 }

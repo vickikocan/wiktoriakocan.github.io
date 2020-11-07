@@ -77,8 +77,8 @@
 
 @media (prefers-color-scheme: dark) {
   .home-body {
-    background-color: #141414;
-    color: #c8c8c8;
+    background-color: #141919;
+    color: gainsboro;
   }
 }
 
@@ -90,7 +90,7 @@
 }
 
 .home-heading h1 {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .home-information {
@@ -107,6 +107,7 @@
 }
 
 .home-information p {
+  font-size: 1.3rem;
   line-height: 1.66;
 }
 
@@ -115,7 +116,16 @@
   padding: 0;
   list-style-type: none;
   text-align: right;
-  line-height: 1.66;
+  line-height: 2;
+}
+
+.home-information ul a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.home-information ul a:hover {
+  text-decoration: underline;
 }
 
 .home-portfolio {
@@ -127,7 +137,10 @@
 }
 
 .home-portfolio__item {
-  margin-bottom: 30px;
+  display: block;
+  margin-bottom: 10vh;
+  color: currentColor;
+  text-decoration: none;
 }
 
 .home-portfolio__item-images {
@@ -135,21 +148,49 @@
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
+  pointer-events: none;
 }
 
 .home-portfolio__item-images img {
   display: block;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .home-portfolio__item-images img:nth-of-type(2) {
-  -webkit-filter: brightness(0.8) saturate(0.8);
-          filter: brightness(0.8) saturate(0.8);
+  -webkit-filter: saturate(0.8);
+          filter: saturate(0.8);
+  opacity: 0.8;
 }
 
 .home-portfolio__item-images img:nth-of-type(3) {
-  -webkit-filter: brightness(0.6) saturate(0.6);
-          filter: brightness(0.6) saturate(0.6);
+  -webkit-filter: saturate(0.6);
+          filter: saturate(0.6);
+  opacity: 0.6;
+}
+
+.home-portfolio__item-title {
+  font-size: 2rem;
+}
+
+.home-portfolio__item-subtitle {
+  font-size: 1rem;
+  opacity: .7;
+  margin-left: 5px;
+}
+
+.home-portfolio__item:hover {
+  -webkit-filter: brightness(1.2);
+          filter: brightness(1.2);
+}
+
+.home-portfolio__item:hover .home-portfolio__item-title {
+  text-decoration: underline;
+}
+
+.home-portfolio__item:active {
+  -webkit-filter: brightness(0.8);
+          filter: brightness(0.8);
 }
 
 .zara-body {
