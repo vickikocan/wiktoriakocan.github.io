@@ -23,7 +23,7 @@
 
     @media (prefers-color-scheme: dark) {
         mix-blend-mode: darken;
-        opacity: 0.2;
+        opacity: 0.2!important;
     }
 
     &--invert {
