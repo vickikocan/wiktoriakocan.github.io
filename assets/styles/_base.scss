@@ -5,7 +5,8 @@
 &-navigation {
     display: block;
     width: 100%;
-    max-width: 80ch;
+    font-size: 1.3rem;
+    max-width: 60ch;
     margin: auto;
     margin-top: 20vh;
     margin-bottom: app-spacing(4);
@@ -45,7 +46,8 @@
 }
 
 &-heading {
-    max-width: 80ch;
+    font-size: 1.3rem;
+    max-width: 60ch;
     margin: auto;
     margin-bottom: 20vh;
     
@@ -55,16 +57,58 @@
 }
 
 &-image {
+    position: relative;
     display: block;
     width: 100%;
     max-width: 1500px;
     margin: auto;
-    margin-bottom: app-spacing(6);
+    margin-bottom: 10vh;
+    z-index: 5;
 }
 
 &-content {
-    max-width: 80ch;
+    font-size: 1.3rem;
+    max-width: 60ch;
     margin: auto;
-    margin-bottom: app-spacing(6);
+    margin-bottom: 10vh;
     line-height: 1.5;
+}
+
+&-list {
+    font-size: 1.3rem;
+    max-width: 60ch;
+    margin: auto;
+    margin-bottom: 10vh;
+    line-height: 1.5;
+
+    &--cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: app-spacing(10);
+        list-style-type: none;
+        transform: skewY(-2deg);
+
+        li {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: app-spacing(6);
+            font-size: 1.3rem;
+            z-index: 0;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: - app-spacing(3);
+                right: - app-spacing(3);
+                bottom: 0;
+                background-color: #2F3A3B;
+                transform-origin: 100%;
+                z-index: -1;
+                opacity: 0.1;
+            }
+        }
+    }
 }

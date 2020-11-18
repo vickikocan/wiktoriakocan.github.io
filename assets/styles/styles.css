@@ -5,7 +5,8 @@
 .app-navigation {
   display: block;
   width: 100%;
-  max-width: 80ch;
+  font-size: 1.3rem;
+  max-width: 60ch;
   margin: auto;
   margin-top: 20vh;
   margin-bottom: 20px;
@@ -46,7 +47,8 @@
 }
 
 .app-heading {
-  max-width: 80ch;
+  font-size: 1.3rem;
+  max-width: 60ch;
   margin: auto;
   margin-bottom: 20vh;
 }
@@ -56,18 +58,70 @@
 }
 
 .app-image {
+  position: relative;
   display: block;
   width: 100%;
   max-width: 1500px;
   margin: auto;
-  margin-bottom: 30px;
+  margin-bottom: 10vh;
+  z-index: 5;
 }
 
 .app-content {
-  max-width: 80ch;
+  font-size: 1.3rem;
+  max-width: 60ch;
   margin: auto;
-  margin-bottom: 30px;
+  margin-bottom: 10vh;
   line-height: 1.5;
+}
+
+.app-list {
+  font-size: 1.3rem;
+  max-width: 60ch;
+  margin: auto;
+  margin-bottom: 10vh;
+  line-height: 1.5;
+}
+
+.app-list--cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px;
+  list-style-type: none;
+  -webkit-transform: skewY(-2deg);
+          transform: skewY(-2deg);
+}
+
+.app-list--cards li {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px;
+  font-size: 1.3rem;
+  z-index: 0;
+}
+
+.app-list--cards li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -15px;
+  right: -15px;
+  bottom: 0;
+  background-color: #2F3A3B;
+  -webkit-transform-origin: 100%;
+          transform-origin: 100%;
+  z-index: -1;
+  opacity: 0.1;
 }
 
 .home-body {
@@ -218,6 +272,59 @@
   .zara-body {
     background-color: #2F3A3B;
     color: #E2EDEE;
+  }
+}
+
+.zara-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+  background: linear-gradient(45deg, transparent, #ff9f5b, #40e4d1, transparent);
+  -webkit-animation: rotate 50s linear infinite;
+          animation: rotate 50s linear infinite;
+  background-size: 400% 400%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .zara-gradient {
+    mix-blend-mode: darken;
+    opacity: 0.2;
+  }
+}
+
+.zara-gradient--invert {
+  background: linear-gradient(135deg, transparent, #40e4d1 45%, #ff6a00 60%, transparent);
+  background-size: 400% 400%;
+  mix-blend-mode: screen;
+  opacity: 0.5;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    background-position: 0% 96%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 96%;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    background-position: 0% 96%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 96%;
   }
 }
 
