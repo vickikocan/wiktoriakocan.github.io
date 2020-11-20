@@ -181,6 +181,15 @@
   margin-bottom: 20vh;
 }
 
+.home-landing {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  grid-gap: 100px;
+  margin-bottom: 10vh;
+}
+
 .home-heading {
   margin-bottom: 5vh;
   margin-top: 0;
@@ -258,6 +267,8 @@
   margin: auto;
   margin-bottom: 10vh;
   line-height: 1.5;
+  margin-top: 15px;
+  text-align: right;
 }
 
 .home-portfolio__item {
