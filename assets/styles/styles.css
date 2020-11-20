@@ -1,5 +1,6 @@
 .app-body {
   margin: 30px;
+  background-image: url("../images/noise.png");
 }
 
 .app-navigation {
@@ -131,75 +132,132 @@
 }
 
 .home-body {
-  background-color: #f0f0f0;
-  color: #464646;
+  background-color: #c7edff;
+  color: #271414;
 }
 
 @media (prefers-color-scheme: dark) {
   .home-body {
-    background-color: #16191e;
+    background-color: #141414;
     color: gainsboro;
   }
 }
 
-.home-heading {
-  max-width: 80ch;
+.home-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+  background: linear-gradient(45deg, #ff96a8, #ffb325);
+  -webkit-animation: rotate 50s linear infinite;
+          animation: rotate 50s linear infinite;
+  background-size: 400% 400%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .home-gradient {
+    mix-blend-mode: darken;
+    opacity: 0.2 !important;
+  }
+}
+
+.home-gradient--invert {
+  background: linear-gradient(135deg, pink 45%, #ff6a00 60%, transparent);
+  background-size: 400% 400%;
+  mix-blend-mode: lighten;
+  opacity: 0.5;
+}
+
+.home-container {
+  display: block;
+  font-size: 1.3rem;
+  max-width: 60ch;
   margin: auto;
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+}
+
+.home-heading {
   margin-bottom: 5vh;
   margin-top: 0;
 }
 
-.home-heading h1 {
-  font-size: 3rem;
-}
-
-.home-information {
-  width: 100%;
-  max-width: 80ch;
+.home-social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-size: 1.3rem;
+  max-width: 60ch;
   margin: auto;
-  grid-gap: 20px;
-  margin-bottom: 20vh;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 2fr;
-      grid-template-columns: 1fr 2fr;
-  margin-top: 20vh;
+  margin-bottom: 5vh;
 }
 
-@media only screen and (max-width: 600px) {
-  .home-information {
-    display: block;
+.home-social li {
+  list-style-type: none;
+  padding: 0;
+}
+
+.home-social__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  border-radius: 100%;
+  overflow: hidden;
+  color: inherit;
+  background: currentColor;
+  -webkit-transition: 0.2s cubic-bezier(0.28, 0.84, 0.42, 1);
+  transition: 0.2s cubic-bezier(0.28, 0.84, 0.42, 1);
+}
+
+.home-social__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.home-social__icon svg * {
+  fill: #c7edff;
+}
+
+@media (prefers-color-scheme: dark) {
+  .home-social__icon svg * {
+    fill: #141414;
   }
 }
 
-.home-information p {
+.home-social__icon:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.home-social__icon:active {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.home-content {
   font-size: 1.3rem;
-  line-height: 1.66;
-  opacity: 0.9;
-}
-
-.home-information ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  line-height: 2;
-}
-
-.home-information ul a {
-  color: currentColor;
-  text-decoration: none;
-}
-
-.home-information ul a:hover {
-  text-decoration: underline;
-}
-
-.home-portfolio {
-  width: 100%;
-  max-width: 80ch;
   margin: auto;
-  margin-bottom: 20px;
-  margin-bottom: 20vh;
+  margin-bottom: 10vh;
+  line-height: 1.5;
 }
 
 .home-portfolio__item {
@@ -210,11 +268,13 @@
 }
 
 .home-portfolio__item-images {
+  position: relative;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
   pointer-events: none;
+  z-index: 5;
 }
 
 @media only screen and (max-width: 600px) {
@@ -339,8 +399,8 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "Helvetica", "Arial", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica", "Arial", sans-serif;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
 }
 /*# sourceMappingURL=styles.css.map */

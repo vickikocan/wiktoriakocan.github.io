@@ -1,68 +1,111 @@
 &-body {
-    background-color: rgb(240, 240, 240);
-    color: rgb(70, 70, 70);
+    background-color: rgb(199, 237, 255);
+    color: rgb(39, 20, 20);
 
     @media (prefers-color-scheme: dark) {
-        background-color: rgb(22, 25, 30);
+        background-color: rgb(20, 20, 20);
         color: rgb(220, 220, 220);
     }
 }
 
-&-heading {
-    max-width: 80ch;
-    margin: auto;
-    margin-bottom: 5vh;
-    margin-top: 0;
+&-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: overlay;
+    background: linear-gradient(45deg, #ff96a8, #ffb325);
+    animation: rotate 50s linear infinite;
+    background-size: 400% 400%;
 
-    h1 {
-        font-size: 3rem;
+    @media (prefers-color-scheme: dark) {
+        mix-blend-mode: darken;
+        opacity: 0.2!important;
+    }
+
+    &--invert {
+        background: linear-gradient(135deg, pink 45%, #ff6a00 60%, transparent);
+        background-size: 400% 400%;
+        mix-blend-mode: lighten;
+        opacity: 0.5;
     }
 }
 
-&-information {
-    width: 100%;
-    max-width: 80ch;
+&-container {
+    display: block;
+    font-size: 1.3rem;
+    max-width: 60ch;
     margin: auto;
-    grid-gap: app-spacing(4);
-    margin-bottom: 20vh;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
     margin-top: 20vh;
+    margin-bottom: 20vh;
+}
 
-    @media only screen and (max-width: 600px) {
-        display: block;
-    }
+&-heading {
+    margin-bottom: 5vh;
+    margin-top: 0;
+}
 
-    p {
-        font-size: 1.3rem;
-        line-height: 1.66;
-        opacity: 0.9;
-    }
-
-    ul { 
-        margin: 0; 
-        padding: 0; 
+&-social {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1.3rem;
+    max-width: 60ch;
+    margin: auto;
+    margin-bottom: 5vh;
+    
+    li {
         list-style-type: none;
-        line-height: 2;
-        
-        a {
-            color: currentColor;
-            text-decoration: none;
+        padding: 0;
+    }
 
-            &:hover {
-                text-decoration: underline;
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        margin-right: app-spacing(3);
+        border-radius: 100%;
+        overflow: hidden;
+        color: inherit;
+        background: currentColor;
+        transition: 0.2s cubic-bezier(0.280, 0.840, 0.420, 1);
+
+        svg {
+            width: 16px;
+            height: 16px;
+
+            * {
+                fill: rgb(199, 237, 255);
+
+                @media (prefers-color-scheme: dark) {
+                    fill: rgb(20, 20, 20);
+                }
             }
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &:active {
+            transform: scale(0.8);
         }
     }
 }
 
-&-portfolio {
-    width: 100%;
-    max-width: 80ch;
+&-content {
+    font-size: 1.3rem;
     margin: auto;
-    margin-bottom: app-spacing(4);
-    margin-bottom: 20vh;
+    margin-bottom: 10vh;
+    line-height: 1.5;
+}
 
+&-portfolio {
     &__item {
         display: block;
         margin-bottom: 10vh;
@@ -70,9 +113,11 @@
         text-decoration: none;
 
         &-images {
+            position: relative;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             pointer-events: none;
+            z-index: 5;
             
             @media only screen and (max-width: 600px) {
                 grid-template-columns: 1fr;
