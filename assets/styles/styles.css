@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .app-body {
   margin: 30px;
   background-image: url("../images/noise.png");
@@ -89,34 +90,38 @@
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 50px;
+  grid-gap: 30px;
   list-style-type: none;
-  -webkit-transform: skewY(-2deg);
-          transform: skewY(-2deg);
 }
 
 .app-list--cards li {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 50px 30px;
+  padding: 25px 40px 40px 40px;
   font-size: 1.3rem;
   z-index: 0;
+}
+
+.app-list--cards li::before {
+  content: "“";
+  position: relative;
+  display: block;
+  font-family: "Georgia", "sans-serif";
+  font-size: 5rem;
+  z-index: 1;
+  opacity: 1;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: currentColor;
+  -webkit-text-fill-color: transparent;
+  line-height: 70px;
+  margin-top: 30px;
 }
 
 .app-list--cards li::after {
   content: "";
   position: absolute;
   top: 0;
-  left: -15px;
-  right: -15px;
+  left: 0;
+  right: 0;
   bottom: 0;
   background-color: #2F3A3B;
   -webkit-transform-origin: 100%;
@@ -129,6 +134,14 @@
   .app-list--cards li::after {
     background-color: #E2EDEE;
   }
+}
+
+.app-side-by-side {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+  grid-gap: 50px;
 }
 
 .home-body {
@@ -413,6 +426,36 @@
   100% {
     background-position: 0% 96%;
   }
+}
+
+.zara-stars {
+  position: relative;
+  display: inline-block;
+  padding: 30px;
+}
+
+.zara-stars::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: currentColor;
+  opacity: 0.1;
+}
+
+.zara-stars svg {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.zara-stars svg:last-of-type {
+  margin-bottom: 0;
+}
+
+.zara-stars * {
+  fill: currentColor;
 }
 
 * {

@@ -45,3 +45,33 @@
         background-position: 0% 96%;
     }
 }
+
+&-stars {
+    position: relative;
+    display: inline-block;
+    padding: app-spacing(6);
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: currentColor;
+        opacity: 0.1;
+    }
+
+    svg {
+        margin-top: app-spacing(2);
+        margin-bottom: app-spacing(6);
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    * {
+        fill: currentColor;
+    }
+}

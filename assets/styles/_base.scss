@@ -85,25 +85,36 @@
     &--cards {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: app-spacing(10);
+        grid-gap: app-spacing(6);
         list-style-type: none;
-        transform: skewY(-2deg);
 
         li {
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: app-spacing(10) app-spacing(6);
+            padding: app-spacing(5) app-spacing(8) app-spacing(8) app-spacing(8);
             font-size: 1.3rem;
             z-index: 0;
+
+            &::before {
+                content: "“";
+                position: relative;
+                display: block;
+                font-family: "Georgia", "sans-serif";
+                font-size: 5rem;
+                z-index: 1;
+                opacity: 1;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: currentColor;
+                -webkit-text-fill-color: transparent;
+                line-height: 70px;
+                margin-top: app-spacing(6);
+            }
 
             &::after {
                 content: "";
                 position: absolute;
                 top: 0;
-                left: - app-spacing(3);
-                right: - app-spacing(3);
+                left: 0;
+                right: 0;
                 bottom: 0;
                 background-color: #2F3A3B;
                 transform-origin: 100%;
@@ -116,4 +127,10 @@
             }
         }
     }
+}
+
+&-side-by-side {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: app-spacing(10);
 }
