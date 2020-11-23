@@ -190,6 +190,16 @@
   margin-bottom: 10vh;
 }
 
+@media only screen and (max-width: 600px) {
+  .home-landing {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .home-landing .home-content {
+    text-align: left;
+  }
+}
+
 .home-heading {
   margin-bottom: 5vh;
   margin-top: 0;
