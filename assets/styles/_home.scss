@@ -17,7 +17,7 @@
     pointer-events: none;
     z-index: 1;
     mix-blend-mode: overlay;
-    background: linear-gradient(45deg, #ff96a8, #ffb325);
+    background: linear-gradient(45deg, transparent, #ff96a8, #ffab0f, transparent);
     animation: rotate 50s linear infinite;
     background-size: 400% 400%;
 
