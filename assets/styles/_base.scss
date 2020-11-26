@@ -20,7 +20,7 @@
         text-decoration: none;
         color: currentColor;
         padding: app-spacing(1) 0;
-        opacity: .65;
+        opacity: 0.65;
 
         &::before {
             content: "";
@@ -133,4 +133,53 @@
     display: grid;
     grid-template-columns: 1fr auto;
     grid-gap: app-spacing(10);
+}
+
+&-personas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: app-spacing(10);
+    font-size: 1.3rem;
+    max-width: 80ch;
+    margin: auto;
+    margin-bottom: 10vh;
+
+    &__item {
+        position: relative;
+
+        &__image {
+            position: relative;
+            display: block;
+            width: 100%;
+            z-index: 1;
+        }
+
+        &__title {
+            font-weight: bold;
+            margin: app-spacing(6);
+        }
+
+        &__body {
+            margin: app-spacing(6);
+            margin-top: - app-spacing(3);
+            opacity: 0.75;
+            line-height: 1.5;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #2F3A3B;
+            z-index: -1;
+            opacity: 0.1;
+
+            @media (prefers-color-scheme: dark) {
+                background-color: #E2EDEE;
+            }
+        }
+    }
 }

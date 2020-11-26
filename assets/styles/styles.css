@@ -22,7 +22,7 @@
   text-decoration: none;
   color: currentColor;
   padding: 5px 0;
-  opacity: .65;
+  opacity: 0.65;
 }
 
 .app-navigation a::before {
@@ -142,6 +142,59 @@
   -ms-grid-columns: 1fr auto;
       grid-template-columns: 1fr auto;
   grid-gap: 50px;
+}
+
+.app-personas {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px;
+  font-size: 1.3rem;
+  max-width: 80ch;
+  margin: auto;
+  margin-bottom: 10vh;
+}
+
+.app-personas__item {
+  position: relative;
+}
+
+.app-personas__item__image {
+  position: relative;
+  display: block;
+  width: 100%;
+  z-index: 1;
+}
+
+.app-personas__item__title {
+  font-weight: bold;
+  margin: 30px;
+}
+
+.app-personas__item__body {
+  margin: 30px;
+  margin-top: -15px;
+  opacity: 0.75;
+  line-height: 1.5;
+}
+
+.app-personas__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2F3A3B;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .app-personas__item::before {
+    background-color: #E2EDEE;
+  }
 }
 
 .home-body {
@@ -456,6 +509,71 @@
 
 .zara-stars * {
   fill: currentColor;
+}
+
+.zara-cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  font-size: 1.3rem;
+  max-width: 90ch;
+  margin: auto;
+  margin-bottom: 10vh;
+  list-style-type: none;
+}
+
+.zara-cards li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: white;
+  color: black;
+  text-align: center;
+  padding: 35px;
+  -webkit-box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.zara-cards li:nth-of-type(1) {
+  -webkit-transform: rotate(-16deg);
+          transform: rotate(-16deg);
+}
+
+.zara-cards li:nth-of-type(2) {
+  -webkit-transform: rotate(12deg);
+          transform: rotate(12deg);
+}
+
+.zara-cards li:nth-of-type(3) {
+  -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+}
+
+.zara-cards li:nth-of-type(4) {
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+}
+
+.zara-cards li:nth-of-type(5) {
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+}
+
+.zara-cards li:nth-of-type(6) {
+  -webkit-transform: rotate(14deg);
+          transform: rotate(14deg);
+}
+
+.zara-cards li:nth-of-type(7) {
+  -webkit-transform: rotate(-8deg);
+          transform: rotate(-8deg);
 }
 
 * {
