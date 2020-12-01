@@ -118,11 +118,19 @@
     margin: 0-30px;
     padding: 0 30px;
     margin-bottom: 10vh;
+    -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
+    scroll-padding: 30px;
+  }
+  .app-list--cards::after {
+    content: '';
+    min-width: 30px;
   }
   .app-list--cards li {
     display: block;
     margin-right: 30px;
     min-width: calc(100vw - 90px);
+    scroll-snap-align: start;
   }
 }
 

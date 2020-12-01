@@ -113,11 +113,20 @@
             margin: 0 - app-spacing(6);
             padding: 0 app-spacing(6);
             margin-bottom: 10vh;
+            scroll-snap-type: x mandatory;
+            scroll-padding: 30px;
+
+            &::after { 
+                // Workaround for https://stackoverflow.com/questions/26888428/display-flex-loses-right-padding-when-overflowing
+                content: '';
+                min-width: app-spacing(6) 
+            } 
 
             li {
                 display: block;
                 margin-right: app-spacing(6);
                 min-width: calc(100vw - 90px);
+                scroll-snap-align: start;
             }
         }
 
