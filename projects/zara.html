@@ -79,14 +79,14 @@
         <p class="app-content">
             Afterwards, I asked the users to do some card sorting. I wanted to find out how they would structure the main menu on ZARA's website. 
         </p>
-        <ol class="zara-cards zara-cards--messy">
-            <li>Coats</li>
-            <li>Blazers and jackets</li>
-            <li>Suits</li>
-            <li>T-Shirts and sweatshirts</li>
-            <li>Shirts and tops</li>
-            <li>Accessories</li>
-            <li>Bags</li>
+        <ol id="categories" class="zara-cards zara-cards--messy">
+            <li class="zara-cards__item">Coats</li>
+            <li class="zara-cards__item">Blazers and jackets</li>
+            <li class="zara-cards__item">Suits</li>
+            <li class="zara-cards__item">T-Shirts and sweatshirts</li>
+            <li class="zara-cards__item">Shirts and tops</li>
+            <li class="zara-cards__item">Accessories</li>
+            <li class="zara-cards__item">Bags</li>
         </ol>
         <p class="app-content">
             Then, I created user personas:
@@ -140,4 +140,53 @@
         <img class="app-image" src="../assets/images/SHOPPING_BASKET_OPEN_1C.png" alt="Zara shopping basket">
         <img class="app-image" src="../assets/images/SHOPPING_BASKET_OPEN_1C.png" alt="Zara shopping basket">
     </body>
+    <script>
+        var browserHeight = window.innerHeight;
+        var cards = document.querySelectorAll(".zara-cards__item");
+        var cardsOdd = document.querySelectorAll(".zara-cards__item:nth-child(odd)");
+        var cardsEven = document.querySelectorAll(".zara-cards__item:nth-child(even)");
+
+        function percentageSeen(element) {
+            // Get the relevant measurements and positions
+            const viewportHeight = window.innerHeight;
+            const scrollTop = window.scrollY;
+            const elementOffsetTop = element.offsetTop;
+            const elementHeight = element.offsetHeight;
+
+            // Calculate percentage of the element that's been seen
+            const distance = scrollTop + viewportHeight - elementOffsetTop;
+            const percentage = Math.round(
+                distance / ((viewportHeight + elementHeight) / 100)
+            );
+
+            // Restrict the range to between 0 and 100
+            return Math.min(100, Math.max(0, percentage));
+        };
+
+        function isScrolledIntoView(element) {
+            var rect = element.getBoundingClientRect();
+            var elemTop = rect.top;
+            var elemBottom = rect.bottom;
+
+            // Partially visible elements return true:
+            return elemTop < window.innerHeight && elemBottom >= 0;
+        }
+
+        cards.forEach(element => {
+            var uniqueOffset = Math.floor(Math.random() * 20);
+            element.dataset.rotation = uniqueOffset;
+            element.style.transform = "rotate(" + parseInt(element.dataset.rotation) + "deg)";
+        });
+
+        window.addEventListener('scroll', function(e) {
+            var rotate = percentageSeen(document.getElementById("categories")) / 4;
+            cardsOdd.forEach(element => {
+                element.style.transform = "rotate(" + (parseInt(element.dataset.rotation) + rotate) + "deg)";
+                element.style.boxShadow = "-" + rotate + "px 10px 15px rgba(0, 0, 0, 0.5)";
+            });
+            cardsEven.forEach(element => {
+                element.style.transform = "rotate(-" + (parseInt(element.dataset.rotation) + rotate) + "deg)";
+            });
+        });
+    </script>
 </html>
