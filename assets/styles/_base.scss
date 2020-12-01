@@ -73,6 +73,10 @@
     margin: auto;
     margin-bottom: 10vh;
     line-height: 1.5;
+
+    span {
+        font-size: inherit;
+    }
 }
 
 &-list {
@@ -160,6 +164,16 @@
     display: grid;
     grid-template-columns: 1fr auto;
     grid-gap: app-spacing(10);
+
+    @media only screen and (max-width: 600px) { 
+        display: flex;
+        flex-wrap: wrap;
+
+        & > * {
+            display: block;
+            margin-bottom: 10vh;
+        }
+    }
 }
 
 &-personas {

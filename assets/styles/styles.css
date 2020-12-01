@@ -77,6 +77,10 @@
   line-height: 1.5;
 }
 
+.app-content span {
+  font-size: inherit;
+}
+
 .app-list {
   font-size: 1.3rem;
   max-width: 60ch;
@@ -167,6 +171,20 @@
   -ms-grid-columns: 1fr auto;
       grid-template-columns: 1fr auto;
   grid-gap: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+  .app-side-by-side {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .app-side-by-side > * {
+    display: block;
+    margin-bottom: 10vh;
+  }
 }
 
 .app-personas__item {
