@@ -85,23 +85,7 @@
   line-height: 1.5;
 }
 
-.app-list--cards {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 30px;
-  list-style-type: none;
-}
-
-.app-list--cards li {
-  position: relative;
-  padding: 25px 40px 40px 40px;
-  font-size: 1.3rem;
-  z-index: 0;
-}
-
-.app-list--cards li::before {
+.app-list--quotes li::before {
   content: "“";
   position: relative;
   display: block;
@@ -114,6 +98,39 @@
   -webkit-text-fill-color: transparent;
   line-height: 70px;
   margin-top: 30px;
+}
+
+.app-list--cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  list-style-type: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .app-list--cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow-x: scroll;
+    margin: 0-30px;
+    padding: 0 30px;
+    margin-bottom: 10vh;
+  }
+  .app-list--cards li {
+    display: block;
+    margin-right: 30px;
+    min-width: calc(100vw - 90px);
+  }
+}
+
+.app-list--cards li {
+  position: relative;
+  padding: 25px 40px 40px 40px;
+  font-size: 1.3rem;
+  z-index: 0;
 }
 
 .app-list--cards li::after {
@@ -144,27 +161,15 @@
   grid-gap: 50px;
 }
 
-.app-personas {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 50px;
-  font-size: 1.3rem;
-  max-width: 80ch;
-  margin: auto;
-  margin-bottom: 10vh;
-}
-
 .app-personas__item {
   position: relative;
+  padding: 0 !important;
 }
 
 .app-personas__item__image {
   position: relative;
   display: block;
   width: 100%;
-  z-index: 1;
 }
 
 .app-personas__item__title {
