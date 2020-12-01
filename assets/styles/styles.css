@@ -533,12 +533,31 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
   color: black;
   text-align: center;
   padding: 35px;
   -webkit-box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
           box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+@media only screen and (max-width: 600px) {
+  .zara-cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .zara-cards li {
+    display: inline-block;
+    margin: 0 100px;
+  }
 }
 
 * {
