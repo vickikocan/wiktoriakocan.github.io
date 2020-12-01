@@ -79,6 +79,7 @@
 
 .app-content span {
   font-size: inherit;
+  line-height: inherit;
 }
 
 .app-list {
