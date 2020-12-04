@@ -75,41 +75,7 @@
     li {
         list-style-type: none;
         padding: 0;
-    }
-
-    &__icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
         margin-right: app-spacing(3);
-        border-radius: 100%;
-        overflow: hidden;
-        color: inherit;
-        background: currentColor;
-        transition: 0.2s cubic-bezier(0.280, 0.840, 0.420, 1);
-
-        svg {
-            width: 16px;
-            height: 16px;
-
-            * {
-                fill: rgb(199, 237, 255);
-
-                @media (prefers-color-scheme: dark) {
-                    fill: rgb(20, 20, 20);
-                }
-            }
-        }
-
-        &:hover {
-            transform: scale(1.1);
-        }
-
-        &:active {
-            transform: scale(0.8);
-        }
     }
 }
 
@@ -169,6 +135,12 @@
             font-size: 1rem;
             opacity: .7;
             margin-left: app-spacing(1);
+
+            @media only screen and (max-width: 600px) {
+                display: block;
+                margin-left: 0;
+                margin-top: app-spacing(2);
+            }
         }
 
         &:hover {
