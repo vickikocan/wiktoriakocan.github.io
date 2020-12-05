@@ -586,15 +586,34 @@
 }
 
 .zara-cards {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   font-size: 1.3rem;
   max-width: 90ch;
   margin: auto;
   margin-bottom: 10vh;
   list-style-type: none;
+}
+
+.zara-cards--messy {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.zara-cards--sorted {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.zara-cards--sorted li {
+  display: -webkit-inline-box !important;
+  display: -ms-inline-flexbox !important;
+  display: inline-flex !important;
+  margin: 0 15px;
 }
 
 .zara-cards li {
@@ -642,5 +661,16 @@
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica", "Arial", sans-serif;
   font-size: 20px;
   font-weight: 700;
+}
+
+hr {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: block;
+  border: none;
+  height: 1px;
+  background: transparent;
+  margin-bottom: 20vh;
 }
 /*# sourceMappingURL=styles.css.map */

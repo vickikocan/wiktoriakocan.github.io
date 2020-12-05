@@ -77,13 +77,26 @@
 }
 
 &-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     font-size: 1.3rem;
     max-width: 90ch;
     margin: auto;
     margin-bottom: 10vh;
     list-style-type: none;
+
+    &--messy {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    &--sorted {
+        display: flex;
+        justify-content: center;
+
+        li {
+            display: inline-flex!important;
+            margin: 0 app-spacing(3);
+        }
+    }
 
     li {
         display: flex;

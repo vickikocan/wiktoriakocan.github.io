@@ -20,7 +20,7 @@
                 ZARA Case Study
             </h1>
         </div>
-        <img class="app-image" src="../assets/images/zara.png" alt="Zara homepage">
+        <img class="app-image" src="/assets/images/zara.png" alt="Zara homepage">
         <p class="app-content">
             In 2020, everyone was forced to become more reliant on online shopping. It went from being a pleasant convenience, to a modern necessity. Because of this, I had noticed more and more people criticising the ZARA website and app. It had become a common joke to mention their negative experience with it, and I decided I wanted to find out exactly why people were feeling this way, and what the ZARA customers really wanted.
         </p>
@@ -51,6 +51,7 @@
                 </svg>
             </div>
         </div>
+        <hr>
         <p class="app-content">
             Next, I conducted usability testing. The most frequent negative comments were:
         </p>
@@ -79,6 +80,7 @@
                 It is responsive
             </li>
         </ol>
+        <hr>
         <p class="app-content">
             Afterwards, I asked the users to do some card sorting. I wanted to find out how they would structure the main menu on ZARA's website. 
         </p>
@@ -92,9 +94,18 @@
             <li class="zara-cards__item">Bags</li>
         </ol>
         <p class="app-content">
+            The sorting activity led to the following categories. Far simpler and cleaner, #TO DO.
+        </p>
+        <ol class="zara-cards zara-cards--sorted">
+            <li class="zara-cards__item">Coats and jackets</li>
+            <li class="zara-cards__item">Tailoring</li>
+            <li class="zara-cards__item">Tops</li>
+            <li class="zara-cards__item">Accessories</li>
+        </ol>
+        <hr>
+        <p class="app-content">
             Then, I created user personas:
         </p>
-
         <ul class="app-list app-list--cards app-personas">
             <li class="app-personas__item">
                 <img src="/assets/images/zoe-pattinson.png" alt="Zoe Pattinson" class="app-personas__item__image">
@@ -134,12 +145,12 @@
                 </p>
             </li>
         </ul>
-
+        <hr>
         <p class="app-content">
             Finally, I sketched out some low-fidelity prototypes:
         </p>
-        <img class="app-image" src="../assets/images/SHOPPING_BASKET_OPEN_1C.png" alt="Zara shopping basket">
-        <img class="app-image" src="../assets/images/SHOPPING_1C.png" alt="Zara shopping basket">
+        <img class="app-image" src="/assets/images/SHOPPING_BASKET_OPEN_1C.png" alt="Zara shopping basket">
+        <img class="app-image" src="/assets/images/SHOPPING_1C.png" alt="Zara shopping basket">
         <div class="app-content">
             <a class="app-button app-button--continue" href="https://xd.adobe.com/view/c78f039c-2da1-4f72-b27b-23ff55b2b63d-92dc/">
                 Try this site
@@ -153,9 +164,9 @@
     </body>
     <script>
         var browserHeight = window.innerHeight;
-        var cards = document.querySelectorAll(".zara-cards__item");
-        var cardsOdd = document.querySelectorAll(".zara-cards__item:nth-child(odd)");
-        var cardsEven = document.querySelectorAll(".zara-cards__item:nth-child(even)");
+        var cards = document.querySelectorAll(".zara-cards--messy .zara-cards__item");
+        var cardsOdd = document.querySelectorAll(".zara-cards--messy .zara-cards__item:nth-child(odd)");
+        var cardsEven = document.querySelectorAll(".zara-cards--messy .zara-cards__item:nth-child(even)");
 
         function percentageSeen(element) {
             // Get the relevant measurements and positions
