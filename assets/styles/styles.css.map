@@ -4,7 +4,7 @@
     "sources": [
         "styles.scss",
         "_functions.scss",
-        "_base.scss",
+        "_app.scss",
         "_home.scss",
         "_zara.scss"
     ],
