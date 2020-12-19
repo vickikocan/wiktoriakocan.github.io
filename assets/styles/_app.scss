@@ -288,6 +288,14 @@
         padding: 0!important;
         margin-bottom: app-spacing(10);
 
+        @media only screen and (max-width: 600px) {
+            grid-template-columns: 1fr;
+            
+            .home-content {
+                text-align: left;
+            }
+        }
+
         div {
             display: flex;
             flex-direction: column;
