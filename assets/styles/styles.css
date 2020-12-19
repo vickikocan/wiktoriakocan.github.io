@@ -629,6 +629,12 @@
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin-bottom: 15vh;
+}
+
+.zara-cards--messy li {
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
 }
 
 .zara-cards--sorted {
@@ -644,7 +650,12 @@
   display: -webkit-inline-box !important;
   display: -ms-inline-flexbox !important;
   display: inline-flex !important;
-  margin: 0 15px;
+  margin: 0 10px;
+  background-color: black !important;
+  color: white !important;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
 }
 
 .zara-cards li {

@@ -86,6 +86,12 @@
     &--messy {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        margin-bottom: 15vh;
+
+        li {
+            font-family: 'Caveat', cursive;
+            font-size: 1.2rem;
+        }
     }
 
     &--sorted {
@@ -94,7 +100,12 @@
 
         li {
             display: inline-flex!important;
-            margin: 0 app-spacing(3);
+            margin: 0 app-spacing(2);
+            background-color: black!important;
+            color: white!important;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
         }
     }
 
