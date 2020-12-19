@@ -106,9 +106,9 @@
         <p class="app-content">
             I created a series of user personas #TODO:
         </p>
-        <div id="personas">
+        <ol class="app-personas" id="personas">
             
-        </div>
+        </ol>
         <hr>
         <p class="app-content">
             Finally, I sketched out some low-fidelity prototypes:
@@ -168,7 +168,8 @@
                     Zoe will browse retailers’ websites and apps in-between all of her daily tasks, not necessarily when she needs to purchase something.
                     <br><br>
                     If she doesn’t enjoy scrolling through a particular app or website, she simply won’t use it, even if she likes the products.
-                `
+                `,
+                pronoun: "her"
             },
             {
                 name: "Marie Kim",
@@ -180,7 +181,8 @@
                     Already having an established and stable career means that Marie doesn’t have to worry too much about the cost of things, but she still likes to be practical and get her money’s worth.
                     <br><br>
                     This also means that she likes things to be of good quality, so they will last her as long as possible.
-                `
+                `,
+                pronoun: "her"
             },
             {
                 name: "Lloyd Dailey",
@@ -190,7 +192,8 @@
                     Lloyd is also popular on social media, such as Instagram, so enjoys putting together an impressive outfit to post online.
                     <br><br>
                     Being confident and with a quickly improving career, Lloyd buys first then checks the prices. It is important that his clothes are impressive to his friends, and cares little about how long the items will last; he shops frequently and will quickly replace something worn out.
-                `
+                `,
+                pronoun: "his"
             }
         ]
 
@@ -208,14 +211,15 @@
         };
 
         personas.forEach(function (element, i) {
-            console.log(element.name);
-            console.log(element.description);
-
             personasContainer.innerHTML += (`
-                <div onclick="showPersonaModal(${i})">
-                    <img src="/assets/images/${element.name.toLowerCase().replace(' ', '-') + '.png'}" alt="">
-                    ${element.name}
-                </div>
+                <li class="app-personas__item">
+                    <img class="app-personas__item__image" src="/assets/images/${element.name.toLowerCase().replace(' ', '-') + '.png'}" alt="">
+                    <div>
+                        <p class="app-personas__item__title">${element.name}</p>
+                        <p class="app-personas__item__body">${element.description.trim().split("<br>").join("").substring(0, 200)}...</p>
+                        <button class="app-button" onclick="showPersonaModal(${i})">Read ${element.pronoun} story</button>
+                    </div>
+                </li>
             `);
         })
 

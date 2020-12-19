@@ -177,31 +177,6 @@
     }
 }
 
-&-personas {
-    &__item {
-        position: relative;
-        padding: 0!important;
-
-        &__image {
-            position: relative;
-            display: block;
-            width: 100%;
-        }
-
-        &__title {
-            font-weight: bold;
-            margin: app-spacing(6);
-        }
-
-        &__body {
-            margin: app-spacing(6);
-            margin-top: - app-spacing(3);
-            opacity: 0.75;
-            line-height: 1.5;
-        }
-    }
-}
-
 &-button {
     display: inline-flex;
     align-items: center;
@@ -296,6 +271,47 @@
         width: calc(100vw - 90px);
         scroll-snap-align: start;
         object-fit: contain;
+    }
+}
+
+&-personas {
+    font-size: 1.3rem;
+    max-width: 60ch;
+    margin: auto;
+    list-style-type: none;
+
+    &__item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: app-spacing(6);
+        position: relative;
+        padding: 0!important;
+        margin-bottom: app-spacing(10);
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        &__image {
+            position: relative;
+            display: block;
+            width: 100%;
+            border-radius: 2px;
+        }
+
+        &__title {
+            font-weight: bold;
+            margin-bottom: app-spacing(6);
+            font-size: 1.3rem;
+        }
+
+        &__body {
+            margin-bottom: app-spacing(6);
+            line-height: 1.66;
+        }
     }
 }
 
