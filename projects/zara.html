@@ -62,7 +62,7 @@
                 The menu is too long, therefore overwhelming
             </li>
             <li>
-                The layout is confusing. Columns were inconsistent
+                The layout can be confusing, columns are inconsistent
             </li>
             <li>
                 Images are too large and sometimes are not focused on the product itself
@@ -76,10 +76,10 @@
                 Unique, editorial aesthetic
             </li>
             <li>
-                It is easy to navigate
+                It's fairly easy to navigate
             </li>
             <li>
-                It is responsive
+                It is responsive and scales to my phone
             </li>
         </ol>
         <hr>
@@ -106,45 +106,9 @@
         <p class="app-content">
             I created a series of user personas #TODO:
         </p>
-        <ul class="app-list app-list--cards app-personas">
-            <li class="app-personas__item">
-                <img src="/assets/images/zoe-pattinson.png" alt="Zoe Pattinson" class="app-personas__item__image">
-                <p class="app-personas__item__title">Zoe Pattinson</p>
-                <p class="app-personas__item__body">
-                    Zoe is a 22 year-old business student who lives in Birmingham, UK. Her schedule is usually quite busy, as she spends her days studying, attending lectures, working at her part-time job, and socialising.
-                    <br><br>
-                    This means she doesn’t have a lot of time to go shopping; but she loves fashion and knows all the latest trends.
-                    <br><br>
-                    Zoe will browse retailers’ websites and apps in-between all of her daily tasks, not necessarily when she needs to purchase something.
-                    <br><br>
-                    If she doesn’t enjoy scrolling through a particular app or website, she simply won’t use it, even if she likes the products.
-                </p>
-            </li>
-            <li class="app-personas__item">
-                <img src="/assets/images/marie-kim.png" alt="Marie Kim" class="app-personas__item__image">
-                <p class="app-personas__item__title">Marie Kim</p>
-                <p class="app-personas__item__body">
-                    Marie is a 43 year-old estate agent and mum of two teenagers, who happily aid her in staying on trend.
-                    <br><br>
-                    She loves to look and feel youthful, and fashion helps her to achieve that. It is also important for her to look and feel good in front of clients.
-                    <br><br>
-                    Already having an established and stable career means that Marie doesn’t have to worry too much about the cost of things, but she still likes to be practical and get her money’s worth.
-                    <br><br>
-                    This also means that she likes things to be of good quality, so they will last her as long as possible.
-                </p>
-            </li>
-            <li class="app-personas__item">
-                <img src="/assets/images/lloyd-dailey.png" alt="Lloyd Dailey" class="app-personas__item__image">
-                <p class="app-personas__item__title">Lloyd Dailey</p>
-                <p class="app-personas__item__body">
-                    Lloyd is a 27 year-old living in London, UK. He has a large group of friends and coworkers, and often browses shops around London, rarely using apps or ordering online, as he is rarely home to receive the delivery. This leaves him hoping that, when he does shop online, it will be a smooth and easy process.
-                    <br><br>
-                    Lloyd is also popular on social media, such as Instagram, so enjoys putting together an impressive outfit to post online.
-                    <br><br>
-                    Being confident and with a quickly improving career, Lloyd buys first then checks the prices. It is important that his clothes are impressive to his friends, and cares little about how long the items will last; he shops frequently and will quickly replace something worn out.
-                </p>
-            </li>
-        </ul>
+        <div id="personas">
+            
+        </div>
         <hr>
         <p class="app-content">
             Finally, I sketched out some low-fidelity prototypes:
@@ -177,8 +141,84 @@
                 </svg>
             </a>
         </div>
+
+        <div id="persona-modal" class="app-persona-modal" style="display: none;">
+            <div class="app-persona-modal__image">
+                <img src="/assets/images/zoe-pattinson.png" alt="">
+            </div>
+            <div class="app-persona-modal__page">
+                <p class="app-persona-modal__page__header"></p>
+                <p class="app-persona-modal__page__description"></p>
+                <button class="app-button" onclick="hidePersonaModal()">Close</button>
+            </div>
+        </div>
+
     </body>
     <script>
+        // Personas
+        var personasContainer = document.getElementById("personas");
+        var personas = [
+            {
+                name: "Zoe Pattinson",
+                description: `
+                    Zoe is a 22 year-old business student who lives in Birmingham, UK. Her schedule is usually quite busy, as she spends her days studying, attending lectures, working at her part-time job, and socialising.
+                    <br><br>
+                    This means she doesn’t have a lot of time to go shopping; but she loves fashion and knows all the latest trends.
+                    <br><br>
+                    Zoe will browse retailers’ websites and apps in-between all of her daily tasks, not necessarily when she needs to purchase something.
+                    <br><br>
+                    If she doesn’t enjoy scrolling through a particular app or website, she simply won’t use it, even if she likes the products.
+                `
+            },
+            {
+                name: "Marie Kim",
+                description: `
+                    Marie is a 43 year-old estate agent and mum of two teenagers, who happily aid her in staying on trend.
+                    <br><br>
+                    She loves to look and feel youthful, and fashion helps her to achieve that. It is also important for her to look and feel good in front of clients.
+                    <br><br>
+                    Already having an established and stable career means that Marie doesn’t have to worry too much about the cost of things, but she still likes to be practical and get her money’s worth.
+                    <br><br>
+                    This also means that she likes things to be of good quality, so they will last her as long as possible.
+                `
+            },
+            {
+                name: "Lloyd Dailey",
+                description: `
+                    Lloyd is a 27 year-old living in London, UK. He has a large group of friends and coworkers, and often browses shops around London, rarely using apps or ordering online, as he is rarely home to receive the delivery. This leaves him hoping that, when he does shop online, it will be a smooth and easy process.
+                    <br><br>
+                    Lloyd is also popular on social media, such as Instagram, so enjoys putting together an impressive outfit to post online.
+                    <br><br>
+                    Being confident and with a quickly improving career, Lloyd buys first then checks the prices. It is important that his clothes are impressive to his friends, and cares little about how long the items will last; he shops frequently and will quickly replace something worn out.
+                `
+            }
+        ]
+
+        function hidePersonaModal() {
+            document.getElementById("persona-modal").style.display = "none";
+        }
+
+        function showPersonaModal(index) {
+            var persona = personas[index];
+            document.getElementById("persona-modal").style.display = "flex";
+            document.querySelector("#persona-modal img").src = `/assets/images/${persona.name.toLowerCase().replace(' ', '-')}.png`;
+            document.querySelector("#persona-modal .app-persona-modal__page__header").innerHTML = persona.name;
+            document.querySelector("#persona-modal .app-persona-modal__page__description").innerHTML = persona.description;
+            document.getElementById("persona-modal").scrollTop = 0;
+        };
+
+        personas.forEach(function (element, i) {
+            console.log(element.name);
+            console.log(element.description);
+
+            personasContainer.innerHTML += (`
+                <div onclick="showPersonaModal(${i})">
+                    <img src="/assets/images/${element.name.toLowerCase().replace(' ', '-') + '.png'}" alt="">
+                    ${element.name}
+                </div>
+            `);
+        })
+
         var browserHeight = window.innerHeight;
         var cards = document.querySelectorAll(".zara-cards--messy .zara-cards__item");
         var cardsOdd = document.querySelectorAll(".zara-cards--messy .zara-cards__item:nth-child(odd)");
