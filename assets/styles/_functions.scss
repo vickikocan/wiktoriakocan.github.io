@@ -1,3 +1,12 @@
 @function app-spacing($multiplier) {
 	@return $multiplier * 5 + px;
 }
+
+%app-absolute-pseudo {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
