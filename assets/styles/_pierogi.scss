@@ -1,0 +1,35 @@
+&-body {
+    background-color: #E2EDEE;
+    color: #0b0c0c;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: #0c1c2b;
+        color: #E2EDEE;
+    }
+}
+
+&-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: overlay;
+    background: linear-gradient(45deg, transparent, #003078, #ffffff, transparent);
+    animation: rotate 50s linear infinite;
+    background-size: 400% 400%;
+
+    @media (prefers-color-scheme: dark) {
+        mix-blend-mode: darken;
+        opacity: 0.2!important;
+    }
+
+    &--invert {
+        background: linear-gradient(135deg, transparent, #5694ca 45%, #003078 60%, transparent);
+        background-size: 400% 400%;
+        mix-blend-mode: screen;
+        opacity: 0.5;
+    }
+}
