@@ -222,6 +222,12 @@
         }
     }
 
+    &--large {
+        padding: app-spacing(3) app-spacing(6);
+        font-size: 1rem;
+        border-radius: 50px;
+    }
+
     &--continue {
         svg {
             animation: continue-pulse 3s ease infinite;
