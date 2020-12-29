@@ -94,6 +94,22 @@ $app-margin: app-spacing(6);
     }
 }
 
+&-footer {
+    background: black;
+    margin: - app-spacing(6);
+    padding: app-spacing(12) 0;
+    color: white;
+
+    .app-content {
+        margin-bottom: 0;
+
+        .app-button {
+            background-color: white;
+            color: black;
+        }
+    }
+}
+
 &-list {
     font-size: 1.3rem;
     max-width: 60ch;
