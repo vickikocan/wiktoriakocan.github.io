@@ -96,14 +96,19 @@ $app-margin: app-spacing(6);
 
 &-footer {
     background: black;
-    margin: - app-spacing(6);
-    padding: app-spacing(12) 0;
+    margin-left: calc((env(safe-area-inset-left) + #{$app-margin}) * -1);
+    margin-right: calc((env(safe-area-inset-right) + #{$app-margin}) * -1);
+    margin-top: - $app-margin;
+    margin-bottom: calc((env(safe-area-inset-bottom) + #{$app-margin}) * -1);
+    padding-left: calc(env(safe-area-inset-left) + #{$app-margin});
+    padding-right: calc(env(safe-area-inset-right) + #{$app-margin});
+    padding-top: app-spacing(12);
+    padding-bottom: calc(calc(env(safe-area-inset-bottom) + #{app-spacing(12)}));
     color: white;
 
     @media only screen and (max-width: $app-mobile-width) {
-        padding: app-spacing(12) app-spacing(6);
-        padding-left: calc(env(safe-area-inset-left) + #{$app-margin});
-        padding-right: calc(env(safe-area-inset-right) + #{$app-margin});
+        // padding: app-spacing(12) app-spacing(6);
+
     }
 
     .app-content {
