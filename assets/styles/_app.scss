@@ -105,12 +105,7 @@ $app-margin: app-spacing(6);
     padding-top: app-spacing(12);
     padding-bottom: calc(calc(env(safe-area-inset-bottom) + #{app-spacing(12)}));
     color: white;
-
-    @media only screen and (max-width: $app-mobile-width) {
-        // padding: app-spacing(12) app-spacing(6);
-
-    }
-
+    
     .app-content {
         margin-bottom: 0;
 
@@ -304,10 +299,7 @@ $app-margin: app-spacing(6);
     margin-bottom: 10vh;
     scroll-snap-type: x mandatory;
     scroll-padding: 30px;
-
-    @media only screen and (max-width: $app-mobile-width) {
-        max-height: 60vh;
-    }
+    z-index: 1;
 
     &::after { 
         // Workaround for https://stackoverflow.com/questions/26888428/display-flex-loses-right-padding-when-overflowing
@@ -318,7 +310,7 @@ $app-margin: app-spacing(6);
     &__item {
         display: block;
         margin-right: app-spacing(6);
-        width: calc(100vw - 90px);
+        max-width: 100%;
         scroll-snap-align: start;
         object-fit: contain;
         max-height: 90vh;
@@ -358,6 +350,7 @@ $app-margin: app-spacing(6);
             position: relative;
             display: block;
             width: 100%;
+            z-index: 1;
         }
 
         &__title {
