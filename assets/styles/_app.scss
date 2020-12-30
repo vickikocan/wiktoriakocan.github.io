@@ -299,7 +299,10 @@ $app-margin: app-spacing(6);
     margin-bottom: 10vh;
     scroll-snap-type: x mandatory;
     scroll-padding: 30px;
-    max-height: 60vh;
+
+    @media only screen and (max-width: $app-mobile-width) {
+        max-height: 60vh;
+    }
 
     &::after { 
         // Workaround for https://stackoverflow.com/questions/26888428/display-flex-loses-right-padding-when-overflowing
