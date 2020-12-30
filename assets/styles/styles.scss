@@ -1,6 +1,7 @@
 @import 'functions';
 
 $app-mobile-width: 926px; // Height of iPhone 12 Pro
+$app-image-shadow: 0 5px 15px rgba(black, 0.1);
 
 .app {
     @import 'app';

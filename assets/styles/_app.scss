@@ -79,6 +79,7 @@ $app-margin: app-spacing(6);
     margin: auto;
     margin-bottom: 10vh;
     z-index: 5;
+    box-shadow: $app-image-shadow;
 }
 
 &-content {
@@ -296,6 +297,8 @@ $app-margin: app-spacing(6);
     @return m#{i}n(#{$numbers});
 }
 
+$gallery-item-spacing: calc((100vw - min(1500px, 100vw - 30px)) / 2);
+
 &-gallery {
     position: relative;
     display: flex;
@@ -306,6 +309,7 @@ $app-margin: app-spacing(6);
     scroll-snap-type: x mandatory;
     scroll-padding: calc((100vw - min(1500px, 100vw - 60px)) / 2);
     z-index: 1;
+    filter: drop-shadow($app-image-shadow);
 
     &::after { 
         // Workaround for https://stackoverflow.com/questions/26888428/display-flex-loses-right-padding-when-overflowing
@@ -316,8 +320,8 @@ $app-margin: app-spacing(6);
     &__item {
         display: block;
         margin-right: app-spacing(6);
-        width: calc(100% - 60px);
-        max-width: calc(min(100% - 60px, 1500px));
+        width: calc(100% - 30px);
+        max-width: calc(min(100% - 30px, 1500px));
         height: 100%;
         scroll-snap-align: start;
         object-fit: contain;
@@ -325,11 +329,11 @@ $app-margin: app-spacing(6);
 
         @media only screen and (min-width: $app-mobile-width) {
             &:first-of-type {
-                margin-left: calc((100vw - min(1500px, 100vw - 60px)) / 2);
+                margin-left: $gallery-item-spacing;
             }
 
             &:last-of-type {
-                margin-right: calc((100vw - min(1500px, 100vw - 60px)) / 2);
+                margin-right: $gallery-item-spacing;
             }
         }
     }
@@ -369,6 +373,7 @@ $app-margin: app-spacing(6);
             display: block;
             width: 100%;
             z-index: 1;
+            box-shadow: $app-image-shadow;
         }
 
         &__title {
