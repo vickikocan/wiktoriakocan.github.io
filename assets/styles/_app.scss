@@ -290,6 +290,12 @@ $app-margin: app-spacing(6);
     }
 }
 
+// Override Sass min()
+// Workaround for https://stackoverflow.com/questions/47195391/sass-compare-vh-and-px-with-min-function
+@function min($numbers...) {
+    @return m#{i}n(#{$numbers});
+}
+
 &-gallery {
     position: relative;
     display: flex;
@@ -298,7 +304,7 @@ $app-margin: app-spacing(6);
     padding: 0 app-spacing(6);
     margin-bottom: 10vh;
     scroll-snap-type: x mandatory;
-    scroll-padding: 30px;
+    scroll-padding: calc((100vw - min(1500px, 100vw - 60px)) / 2);
     z-index: 1;
 
     &::after { 
@@ -310,10 +316,22 @@ $app-margin: app-spacing(6);
     &__item {
         display: block;
         margin-right: app-spacing(6);
-        max-width: 100%;
+        width: calc(100% - 60px);
+        max-width: calc(min(100% - 60px, 1500px));
+        height: 100%;
         scroll-snap-align: start;
         object-fit: contain;
-        max-height: 90vh;
+        max-height: min(90vh, 800px);
+
+        @media only screen and (min-width: $app-mobile-width) {
+            &:first-of-type {
+                margin-left: calc((100vw - min(1500px, 100vw - 60px)) / 2);
+            }
+
+            &:last-of-type {
+                margin-right: calc((100vw - min(1500px, 100vw - 60px)) / 2);
+            }
+        }
     }
 }
 
