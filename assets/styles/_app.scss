@@ -100,6 +100,10 @@ $app-margin: app-spacing(6);
     padding: app-spacing(12) 0;
     color: white;
 
+    @media only screen and (max-width: $app-mobile-width) {
+        padding: app-spacing(12) app-spacing(6);
+    }
+
     .app-content {
         margin-bottom: 0;
 
