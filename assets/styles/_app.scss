@@ -1,0 +1,438 @@
+$app-margin: app-spacing(6);
+
+&-body {
+    margin-top: calc(env(safe-area-inset-top) + #{$app-margin});
+    margin-left: calc(env(safe-area-inset-left) + #{$app-margin});
+    margin-right: calc(env(safe-area-inset-right) + #{$app-margin});
+    margin-bottom: calc(env(safe-area-inset-bottom) + #{$app-margin});
+}
+
+&-noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("/assets/images/noise.png");
+    pointer-events: none;
+}
+
+&-navigation {
+    display: block;
+    width: 100%;
+    font-size: 1.3rem;
+    max-width: 60ch;
+    margin: auto;
+    margin-top: 20vh;
+    margin-bottom: app-spacing(4);
+
+    a {
+        position: relative;
+        font-size: 0.6rem;
+        letter-spacing: 2;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: currentColor;
+        padding: app-spacing(1) 0;
+        opacity: 0.65;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 2px;
+            background: currentColor;
+            opacity: 0;
+            pointer-events: none;
+            transition: .1s ease;
+        }
+
+        &:hover {
+            opacity: 1;
+
+            &::before {
+                bottom: - app-spacing(1);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+&-heading {
+    font-size: 1.3rem;
+    max-width: 60ch;
+    margin: auto;
+    margin-bottom: 20vh;
+    
+    h1 {
+        font-size: 4rem;
+    }
+}
+
+&-image {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+    margin-bottom: 10vh;
+    z-index: 5;
+    box-shadow: $app-image-shadow;
+}
+
+&-content {
+    font-size: 1.3rem;
+    max-width: 60ch;
+    margin: auto;
+    margin-bottom: 10vh;
+    line-height: 1.5;
+
+    span {
+        font-size: inherit;
+        line-height: inherit;
+    }
+}
+
+&-footer {
+    background: black;
+    margin-left: calc((env(safe-area-inset-left) + #{$app-margin}) * -1);
+    margin-right: calc((env(safe-area-inset-right) + #{$app-margin}) * -1);
+    margin-top: - $app-margin;
+    margin-bottom: calc((env(safe-area-inset-bottom) + #{$app-margin}) * -1);
+    padding-left: calc(env(safe-area-inset-left) + #{$app-margin});
+    padding-right: calc(env(safe-area-inset-right) + #{$app-margin});
+    padding-top: app-spacing(12);
+    padding-bottom: calc(calc(env(safe-area-inset-bottom) + #{app-spacing(12)}));
+    color: white;
+    
+    .app-content {
+        margin-bottom: 0;
+
+        .app-button {
+            background-color: white;
+            color: black;
+        }
+    }
+}
+
+&-list {
+    font-size: 1.3rem;
+    max-width: 60ch;
+    margin: auto;
+    margin-bottom: 10vh;
+    line-height: 1.5;
+
+    &--quotes {
+        li {
+            &::before {
+                content: "“";
+                position: relative;
+                display: block;
+                font-family: "Georgia", "sans-serif";
+                font-size: 5rem;
+                z-index: 1;
+                opacity: 1;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: currentColor;
+                -webkit-text-fill-color: transparent;
+                line-height: 70px;
+                margin-top: app-spacing(6);
+            }
+        }
+    }
+
+    &--cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: app-spacing(6);
+        list-style-type: none;
+
+        @media only screen and (max-width: $app-mobile-width) {
+            display: flex;
+            overflow-x: scroll;
+            margin: 0 - app-spacing(6);
+            padding: 0 app-spacing(6);
+            margin-bottom: 10vh;
+            scroll-snap-type: x mandatory;
+            scroll-padding: 30px;
+
+            &::after { 
+                // Workaround for https://stackoverflow.com/questions/26888428/display-flex-loses-right-padding-when-overflowing
+                content: '';
+                min-width: app-spacing(6) 
+            } 
+
+            li {
+                display: block;
+                margin-right: app-spacing(6);
+                min-width: calc(100vw - 90px);
+                scroll-snap-align: start;
+            }
+        }
+
+        li {
+            position: relative;
+            padding: app-spacing(5) app-spacing(8) app-spacing(8) app-spacing(8);
+            font-size: 1.3rem;
+            z-index: 0;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #2F3A3B;
+                transform-origin: 100%;
+                z-index: -1;
+                opacity: 0.1;
+
+                @media (prefers-color-scheme: dark) {
+                    background-color: #E2EDEE;
+                }
+            }
+        }
+    }
+}
+
+&-side-by-side {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: app-spacing(10);
+
+    @media only screen and (max-width: $app-mobile-width) { 
+        display: flex;
+        flex-wrap: wrap;
+
+        & > * {
+            display: block;
+            margin-bottom: 10vh;
+        }
+    }
+}
+
+&-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    color: white;
+    border-radius: 25px;
+    min-height: 44px;
+    text-decoration: none;
+    padding: 0 app-spacing(4);
+    font-size: 0.7rem;
+    transition: 0.2s cubic-bezier(0.280, 0.840, 0.420, 1);
+    outline: none;
+    border: none;
+
+    &:hover {
+        filter: brightness(1.1);
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+    &:active {
+        transform: scale(0.8);
+    }
+
+    &--icon {
+        color: inherit;
+        background: currentColor;
+        padding: 0;
+        width: 44px;
+
+        svg {
+            width: 18px;
+            height: 18px;
+
+            * {
+                fill: rgb(199, 237, 255);
+
+                @media (prefers-color-scheme: dark) {
+                    fill: rgb(20, 20, 20);
+                }
+            }
+        }
+    }
+
+    &--large {
+        padding: app-spacing(3) app-spacing(6);
+        font-size: 1rem;
+        border-radius: 50px;
+    }
+
+    &--continue {
+        svg {
+            animation: continue-pulse 3s ease infinite;
+            margin-left: app-spacing(2);
+
+            * {
+                fill: currentColor;
+            }
+        }
+    }
+}
+
+@keyframes continue-pulse {
+    0% {
+        opacity: 0.5;
+    }
+    25% {
+        transform: translateX(2.5px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 0.5;
+    }
+}
+
+// Override Sass min()
+// Workaround for https://stackoverflow.com/questions/47195391/sass-compare-vh-and-px-with-min-function
+@function min($numbers...) {
+    @return m#{i}n(#{$numbers});
+}
+
+$gallery-item-spacing: calc((100vw - min(1500px, 100vw - 30px)) / 2);
+
+&-gallery {
+    position: relative;
+    display: flex;
+    overflow-x: scroll;
+    margin: 0 - app-spacing(6);
+    padding: 0 app-spacing(6);
+    margin-bottom: 10vh;
+    scroll-snap-type: x mandatory;
+    scroll-padding: calc((100vw - min(1500px, 100vw - 60px)) / 2);
+    z-index: 1;
+    filter: drop-shadow($app-image-shadow);
+
+    &::after { 
+        // Workaround for https://stackoverflow.com/questions/26888428/display-flex-loses-right-padding-when-overflowing
+        content: '';
+        min-width: app-spacing(6); 
+    } 
+
+    &__item {
+        display: block;
+        margin-right: app-spacing(6);
+        width: calc(100% - 30px);
+        max-width: calc(min(100% - 30px, 1500px));
+        height: 100%;
+        scroll-snap-align: start;
+        object-fit: contain;
+        max-height: min(90vh, 800px);
+
+        @media only screen and (min-width: $app-mobile-width) {
+            &:first-of-type {
+                margin-left: $gallery-item-spacing;
+            }
+
+            &:last-of-type {
+                margin-right: $gallery-item-spacing;
+            }
+        }
+    }
+}
+
+&-personas {
+    font-size: 1.3rem;
+    max-width: 60ch;
+    margin: auto;
+    list-style-type: none;
+
+    &__item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: app-spacing(6);
+        position: relative;
+        padding: 0!important;
+        margin-bottom: app-spacing(10);
+
+        @media only screen and (max-width: $app-mobile-width) {
+            grid-template-columns: 1fr;
+            
+            .home-content {
+                text-align: left;
+            }
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        &__image {
+            position: relative;
+            display: block;
+            width: 100%;
+            z-index: 1;
+            box-shadow: $app-image-shadow;
+        }
+
+        &__title {
+            font-weight: bold;
+            margin-bottom: app-spacing(6);
+            font-size: 1.3rem;
+        }
+
+        &__body {
+            margin-bottom: app-spacing(6);
+            line-height: 1.66;
+        }
+    }
+}
+
+&-persona-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    z-index: 10;
+    overflow: scroll;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: app-spacing(20) app-spacing(2);
+    backdrop-filter: blur(20px);
+
+    &__image {
+        width: 100%;
+        max-width: 700px;
+
+        img {
+            display: block;
+            width: 100%;
+            // margin-top: - app-spacing(10); // Uncomment to have image escape boundary
+        }
+    }
+
+    &__page {
+        width: 100%;
+        max-width: 700px;
+        padding: app-spacing(10);
+        background-color: white;
+        color: black;
+
+        &__header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: app-spacing(10);
+        }
+
+        &__description {
+            line-height: 1.6;
+            font-size: 1.1rem;
+            margin-bottom: app-spacing(10);
+        }
+    }
+}

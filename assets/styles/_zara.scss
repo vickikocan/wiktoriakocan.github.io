@@ -1,0 +1,134 @@
+&-body {
+    background-color: #E2EDEE;
+    color: #2F3A3B;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: #2F3A3B;
+        color: #E2EDEE;
+    }
+}
+
+&-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: overlay;
+    background: linear-gradient(45deg, transparent, #ff9f5b, #40e4d1, transparent);
+    animation: rotate 50s linear infinite;
+    background-size: 400% 400%;
+
+    @media (prefers-color-scheme: dark) {
+        mix-blend-mode: darken;
+        opacity: 0.2!important;
+    }
+
+    &--invert {
+        background: linear-gradient(135deg, transparent, #40e4d1 45%, #ff6a00 60%, transparent);
+        background-size: 400% 400%;
+        mix-blend-mode: screen;
+        opacity: 0.5;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        background-position: 0% 96%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 96%;
+    }
+}
+
+&-stars {
+    position: relative;
+    display: inline-block;
+    padding: app-spacing(6);
+
+    &::before {
+        @extend %app-absolute-pseudo;
+        background-color: currentColor;
+        opacity: 0.1;
+    }
+
+    svg {
+        margin-top: app-spacing(2);
+        margin-bottom: app-spacing(6);
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    * {
+        fill: currentColor;
+    }
+}
+
+&-cards {
+    font-size: 1.3rem;
+    max-width: 90ch;
+    margin: auto;
+    margin-bottom: 10vh;
+    list-style-type: none;
+
+    &--messy {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        margin-bottom: 15vh;
+
+        li {
+            font-family: 'Caveat', cursive;
+            font-size: 1.2rem;
+        }
+    }
+
+    &--sorted {
+        display: flex;
+        justify-content: center;
+
+        li {
+            display: inline-flex!important;
+            margin: 0 app-spacing(2);
+            background-color: black!important;
+            color: white!important;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            box-shadow: 0 5px 15px rgba(black, 0.3)!important;
+
+            @media only screen and (max-width: $app-mobile-width) {
+                margin: app-spacing(2) 0!important;
+            }
+        }
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.9);
+        color: black;
+        text-align: center;
+        padding: app-spacing(7);
+        box-shadow: 0 10px 15px rgba(black, 0.5);
+        backdrop-filter: blur(5px);
+    }
+
+    @media only screen and (max-width: $app-mobile-width) {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        li {
+            display: inline-block;
+            margin: 0 app-spacing(20);
+        }
+    }
+}

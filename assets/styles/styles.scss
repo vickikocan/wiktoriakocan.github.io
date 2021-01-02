@@ -1,0 +1,42 @@
+@import 'functions';
+
+$app-mobile-width: 926px; // Height of iPhone 12 Pro
+$app-image-shadow: 0 5px 15px rgba(black, 0.1);
+
+.app {
+    @import 'app';
+}
+
+.home {
+    @import 'home';
+}
+
+.zara {
+    @import 'zara';
+}
+
+.pierogi {
+    @import 'pierogi';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica", "Arial", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+
+    @media only screen and (max-width: 380px) {
+        font-size: 16px;
+    }
+}
+
+hr {
+    appearance: none;
+    display: block;
+    border: none;
+    height: 1px;
+    background: transparent;
+    margin-bottom: 20vh;
+}
