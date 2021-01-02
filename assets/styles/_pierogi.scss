@@ -33,3 +33,24 @@
         opacity: 0.5;
     }
 }
+
+&-design-flow {
+    position: relative;
+    background: white;
+    padding: app-spacing(10);
+    margin-left: calc((env(safe-area-inset-left) + #{app-spacing(6)}) * -1);
+    margin-right: calc((env(safe-area-inset-right) + #{app-spacing(6)}) * -1);
+    box-shadow: $app-image-shadow;
+    z-index: 1;
+
+    @media only screen and (max-width: $app-mobile-width) {
+        padding: app-spacing(3);
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        max-width: 2000px;
+        margin: auto;
+    }
+}
