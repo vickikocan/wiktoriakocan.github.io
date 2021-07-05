@@ -935,7 +935,7 @@
 
 @media (prefers-color-scheme: dark) {
   .unissu-body {
-    background-color: #0c1c2b;
+    background-color: #152d38;
     color: #E2EDEE;
   }
 }
@@ -949,24 +949,24 @@
   pointer-events: none;
   z-index: 1;
   mix-blend-mode: overlay;
-  background: linear-gradient(45deg, transparent, #188bc0, yellow, transparent);
+  background: linear-gradient(45deg, transparent, #55b5e6, #914e97, transparent);
   -webkit-animation: rotate 50s linear infinite;
           animation: rotate 50s linear infinite;
   background-size: 400% 400%;
+  opacity: 0.3;
 }
 
 @media (prefers-color-scheme: dark) {
   .unissu-gradient {
     mix-blend-mode: darken;
-    opacity: 0.2 !important;
+    opacity: 0.6 !important;
   }
 }
 
 .unissu-gradient--invert {
-  background: linear-gradient(135deg, transparent, red 45%, #188bc0 60%, transparent);
+  background: linear-gradient(135deg, transparent, #d65e70 40%, #487f9b 70%, transparent);
   background-size: 400% 400%;
   mix-blend-mode: screen;
-  opacity: 0.5;
 }
 
 .unissu-design-flow {

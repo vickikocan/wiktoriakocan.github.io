@@ -3,7 +3,7 @@
     color: #0b0c0c;
 
     @media (prefers-color-scheme: dark) {
-        background-color: #0c1c2b;
+        background-color: #152d38;
         color: #E2EDEE;
     }
 }
@@ -17,20 +17,20 @@
     pointer-events: none;
     z-index: 1;
     mix-blend-mode: overlay;
-    background: linear-gradient(45deg, transparent, rgb(24, 139, 192), yellow, transparent);
+    background: linear-gradient(45deg, transparent, #55b5e6, #914e97, transparent);
     animation: rotate 50s linear infinite;
     background-size: 400% 400%;
+    opacity: 0.3;
 
     @media (prefers-color-scheme: dark) {
         mix-blend-mode: darken;
-        opacity: 0.2!important;
+        opacity: 0.6!important;
     }
 
     &--invert {
-        background: linear-gradient(135deg, transparent, red 45%, rgb(24, 139, 192) 60%, transparent);
+        background: linear-gradient(135deg, transparent, #d65e70 40%, #487f9b 70%, transparent);
         background-size: 400% 400%;
         mix-blend-mode: screen;
-        opacity: 0.5;
     }
 }
 
