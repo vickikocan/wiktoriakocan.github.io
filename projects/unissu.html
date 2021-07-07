@@ -38,6 +38,9 @@
             I also included visual documentation of styles; this includes Colours, typography, images, illustrations, and elevations.
         </p>
         <img class="app-image" src="/assets/images/navarro_colours.png" alt="Colours in the Navarro Design System"/>
+        <div id="page-break-image" class="unissu-colours">
+            <img src="/assets/images/navarro-paint-break.png" alt="Colours in the Navarro Design System"/>
+        </div>
         <p class="app-content">
             The patterns page holds the molecules and organisms of the system. These are groups of the “atom” elements that function together, such as navigations and sidebars. For a design system of this size, it was beneficial to combine them onto one page that I call patterns, since it limits the need to search through several pages. 
         </p>
@@ -49,4 +52,10 @@
             Finally, I created a Playground page when I introduced the system to my team. This was a space for them to test the assets, learn how to use it to their advantage and poke holes that I could then fix. To make onboarding to our team easier, I also created a presentation that introduces the design system to its users. My goal is to keep this system evergreen, and ever useful to the designers and developers. So far, it has saved the designers a lot of time when making iterations and kept everyone organised; it narrows the margin for error and keeps us consistent. 
         </p>
     </body>
+    <script>
+        window.addEventListener('scroll', function(e) {
+            var pageBreak = document.getElementById("page-break-image");
+            pageBreak.style.filter = "hue-rotate(" + window.scrollY / 5 + "deg)";
+        });
+    </script>
 </html>
