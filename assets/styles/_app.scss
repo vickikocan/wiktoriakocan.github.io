@@ -80,6 +80,10 @@ $app-margin: app-spacing(6);
     margin-bottom: 10vh;
     z-index: 5;
     box-shadow: $app-image-shadow;
+
+    &--no-resize {
+        width: auto;
+    }
 }
 
 &-content {
