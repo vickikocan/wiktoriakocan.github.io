@@ -66,6 +66,7 @@
 
     img {
         width: 100vw;
+        z-index: 1;
     }
 
     &::before {
@@ -79,5 +80,9 @@
         background-size: cover;
         filter: blur(20px);
         z-index: -1;
+
+        @media (prefers-color-scheme: dark) {
+            filter: brightness(0) blur(5px);
+        }
     }
 }
