@@ -80,6 +80,10 @@ $app-margin: app-spacing(6);
     margin-bottom: 10vh;
     z-index: 5;
     box-shadow: $app-image-shadow;
+
+    &--no-resize {
+        width: auto;
+    }
 }
 
 &-content {
@@ -88,6 +92,23 @@ $app-margin: app-spacing(6);
     margin: auto;
     margin-bottom: 10vh;
     line-height: 1.5;
+
+    a {
+        font-size: inherit;
+        color: inherit;
+        text-decoration-thickness: 3px;
+        text-underline-offset: 3px;
+        text-decoration-skip: none;
+        transition: text-underline-offset .2s ease;
+
+        &:active {
+            opacity: 0.75;
+        }
+
+        &:active {
+            opacity: 0.5;
+        }
+    }
 
     span {
         font-size: inherit;
