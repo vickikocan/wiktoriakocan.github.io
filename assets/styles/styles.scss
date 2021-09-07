@@ -23,6 +23,10 @@ $app-image-shadow: 0 5px 15px rgba(black, 0.1);
     @import 'unissu';
 }
 
+.intergalactic {
+    @import 'intergalactic';
+}
+
 * {
     margin: 0;
     padding: 0;
