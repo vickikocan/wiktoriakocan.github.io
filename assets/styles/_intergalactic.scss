@@ -36,7 +36,7 @@
 
 &-design-flow {
     position: relative;
-    background: white;
+    background: #e5e5e5;
     padding: app-spacing(10);
     margin-left: calc((env(safe-area-inset-left) + #{app-spacing(6)}) * -1);
     margin-right: calc((env(safe-area-inset-right) + #{app-spacing(6)}) * -1);
@@ -52,37 +52,5 @@
         width: 100%;
         max-width: 2000px;
         margin: auto;
-    }
-}
-
-&-colours {
-    display: block;
-    position: relative;
-    width: 100vw;
-    margin-left: calc((env(safe-area-inset-left) + #{app-spacing(6)}) * -1);
-    margin-right: calc((env(safe-area-inset-right) + #{app-spacing(6)}) * -1);
-    margin-bottom: app-spacing(10);
-    z-index: 0;
-
-    img {
-        width: 100vw;
-        z-index: 1;
-    }
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: url("/assets/images/navarro-paint-break.png");
-        background-size: cover;
-        filter: blur(20px);
-        z-index: -1;
-
-        @media (prefers-color-scheme: dark) {
-            filter: brightness(0) blur(5px);
-        }
     }
 }

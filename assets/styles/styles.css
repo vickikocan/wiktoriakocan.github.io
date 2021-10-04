@@ -1057,7 +1057,7 @@
 }
 
 .intergalactic-body {
-  background-color: #FBCE93;
+  background-color: #cdd0ff;
   color: #011c29;
 }
 
@@ -1099,7 +1099,7 @@
 
 .intergalactic-design-flow {
   position: relative;
-  background: white;
+  background: #e5e5e5;
   padding: 50px;
   margin-left: calc((env(safe-area-inset-left) + 30px) * -1);
   margin-right: calc((env(safe-area-inset-right) + 30px) * -1);
@@ -1119,42 +1119,6 @@
   width: 100%;
   max-width: 2000px;
   margin: auto;
-}
-
-.intergalactic-colours {
-  display: block;
-  position: relative;
-  width: 100vw;
-  margin-left: calc((env(safe-area-inset-left) + 30px) * -1);
-  margin-right: calc((env(safe-area-inset-right) + 30px) * -1);
-  margin-bottom: 50px;
-  z-index: 0;
-}
-
-.intergalactic-colours img {
-  width: 100vw;
-  z-index: 1;
-}
-
-.intergalactic-colours::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("/assets/images/navarro-paint-break.png");
-  background-size: cover;
-  -webkit-filter: blur(20px);
-          filter: blur(20px);
-  z-index: -1;
-}
-
-@media (prefers-color-scheme: dark) {
-  .intergalactic-colours::before {
-    -webkit-filter: brightness(0) blur(5px);
-            filter: brightness(0) blur(5px);
-  }
 }
 
 * {
