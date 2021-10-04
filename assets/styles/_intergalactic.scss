@@ -1,0 +1,56 @@
+&-body {
+    background-color: #cdd0ff;
+    color: #011c29;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: #011c29;
+        color: #FBCE93;
+    }
+}
+
+&-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: overlay;
+    background: linear-gradient(45deg, transparent, #80541c, #9d0daa, transparent);
+    animation: rotate 50s linear infinite;
+    background-size: 400% 400%;
+    opacity: 0.3;
+
+    @media (prefers-color-scheme: dark) {
+        mix-blend-mode: darken;
+        opacity: 0.6!important;
+    }
+
+    &--invert {
+        background: linear-gradient(135deg, transparent, #1f1150 40%, #552e6b 70%, transparent);
+        background-size: 400% 400%;
+        mix-blend-mode: screen;
+    }
+}
+
+&-design-flow {
+    position: relative;
+    background: #e5e5e5;
+    padding: app-spacing(10);
+    margin-left: calc((env(safe-area-inset-left) + #{app-spacing(6)}) * -1);
+    margin-right: calc((env(safe-area-inset-right) + #{app-spacing(6)}) * -1);
+    box-shadow: $app-image-shadow;
+    z-index: 1;
+
+    @media only screen and (max-width: $app-mobile-width) {
+        padding: app-spacing(3);
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        max-width: 2000px;
+        margin: auto;
+    }
+}
