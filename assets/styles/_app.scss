@@ -99,7 +99,7 @@ $app-margin: app-spacing(6);
         text-decoration-thickness: 3px;
         text-underline-offset: 3px;
         text-decoration-skip: none;
-        transition: text-underline-offset .2s ease;
+        transition: text-underline-offset .2s ease, transform .2s ease;
 
         &:active {
             opacity: 0.75;
@@ -144,6 +144,25 @@ $app-margin: app-spacing(6);
     margin: auto;
     margin-bottom: 10vh;
     line-height: 1.5;
+
+    &--points {
+        li {
+            &::before {
+                content: "*";
+                position: relative;
+                display: block;
+                font-family: "Georgia", "sans-serif";
+                font-size: 5rem;
+                z-index: 1;
+                opacity: 1;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: currentColor;
+                -webkit-text-fill-color: transparent;
+                line-height: 70px;
+                margin-top: app-spacing(6);
+            }
+        }
+    }
 
     &--quotes {
         li {
