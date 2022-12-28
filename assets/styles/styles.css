@@ -1237,6 +1237,13 @@
       justify-self: start;
 }
 
+@media only screen and (max-width: 926px) {
+  .autovia-buy-box-comparison {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
 .autovia-valuation-tool-body {
   background-color: #E2EDEE;
   color: #2F3A3B;

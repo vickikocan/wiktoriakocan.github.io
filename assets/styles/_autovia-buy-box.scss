@@ -78,4 +78,8 @@
             justify-self: start;
         }
     }
+
+    @media only screen and (max-width: $app-mobile-width) {
+        grid-template-columns: 1fr;
+    }
 }
