@@ -27,6 +27,14 @@ $app-image-shadow: 0 5px 15px rgba(black, 0.1);
     @import 'intergalactic';
 }
 
+.autovia-buy-box {
+    @import 'autovia-buy-box';
+}
+
+.autovia-valuation-tool {
+    @import 'autovia-valuation-tool';
+}
+
 * {
     margin: 0;
     padding: 0;

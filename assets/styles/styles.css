@@ -111,8 +111,10 @@
   text-underline-offset: 3px;
   -webkit-text-decoration-skip: none;
           text-decoration-skip: none;
-  -webkit-transition: text-underline-offset .2s ease;
-  transition: text-underline-offset .2s ease;
+  -webkit-transition: text-underline-offset .2s ease, -webkit-transform .2s ease;
+  transition: text-underline-offset .2s ease, -webkit-transform .2s ease;
+  transition: text-underline-offset .2s ease, transform .2s ease;
+  transition: text-underline-offset .2s ease, transform .2s ease, -webkit-transform .2s ease;
 }
 
 .app-content a:active {
@@ -156,6 +158,21 @@
   margin: auto;
   margin-bottom: 10vh;
   line-height: 1.5;
+}
+
+.app-list--points li::before {
+  content: "*";
+  position: relative;
+  display: block;
+  font-family: "Georgia", "sans-serif";
+  font-size: 5rem;
+  z-index: 1;
+  opacity: 1;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: currentColor;
+  -webkit-text-fill-color: transparent;
+  line-height: 70px;
+  margin-top: 30px;
 }
 
 .app-list--quotes li::before {
@@ -624,7 +641,7 @@
 
 .home-content {
   font-size: 1.3rem;
-  margin: auto;
+  margin-left: auto;
   margin-bottom: 10vh;
   line-height: 1.5;
   margin-top: 15px;
@@ -1119,6 +1136,165 @@
   width: 100%;
   max-width: 2000px;
   margin: auto;
+}
+
+.autovia-buy-box-body {
+  background-color: #E2EDEE;
+  color: #2F3A3B;
+}
+
+@media (prefers-color-scheme: dark) {
+  .autovia-buy-box-body {
+    background-color: #2E353F;
+    color: #E2EDEE;
+  }
+}
+
+.autovia-buy-box-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+  background: linear-gradient(45deg, transparent, #CC474A, #FDF05D, transparent);
+  -webkit-animation: rotate 50s linear infinite;
+          animation: rotate 50s linear infinite;
+  background-size: 400% 400%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .autovia-buy-box-gradient {
+    mix-blend-mode: darken;
+    opacity: 0.2 !important;
+  }
+}
+
+.autovia-buy-box-gradient--invert {
+  background: linear-gradient(135deg, transparent, #CC474A 45%, #2663B8 60%, transparent);
+  background-size: 400% 400%;
+  mix-blend-mode: screen;
+  opacity: 0.5;
+}
+
+@keyframes rotate {
+  0% {
+    background-position: 0% 96%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 96%;
+  }
+}
+
+.autovia-buy-box-comparison {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  gap: 10vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  max-width: 1500px;
+  margin: auto;
+  margin-bottom: 10vh;
+}
+
+.autovia-buy-box-comparison img {
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+}
+
+.autovia-buy-box-comparison img:nth-of-type(1) {
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.autovia-buy-box-comparison img:nth-of-type(2) {
+  -ms-grid-column-align: start;
+      justify-self: start;
+}
+
+.autovia-buy-box-comparison img:nth-of-type(3) {
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.autovia-buy-box-comparison img:nth-of-type(4) {
+  -ms-grid-column-align: start;
+      justify-self: start;
+}
+
+@media only screen and (max-width: 926px) {
+  .autovia-buy-box-comparison {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.autovia-valuation-tool-body {
+  background-color: #E2EDEE;
+  color: #2F3A3B;
+}
+
+@media (prefers-color-scheme: dark) {
+  .autovia-valuation-tool-body {
+    background-color: #2F3A3B;
+    color: #E2EDEE;
+  }
+}
+
+.autovia-valuation-tool-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+  background: linear-gradient(45deg, transparent, #dab500, black, transparent);
+  -webkit-animation: rotate 50s linear infinite;
+          animation: rotate 50s linear infinite;
+  background-size: 400% 400%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .autovia-valuation-tool-gradient {
+    mix-blend-mode: darken;
+    opacity: 0.2 !important;
+  }
+}
+
+.autovia-valuation-tool-gradient--invert {
+  background: linear-gradient(135deg, transparent, #dab500 45%, white 60%, transparent);
+  background-size: 400% 400%;
+  mix-blend-mode: screen;
+  opacity: 0.5;
+}
+
+@keyframes rotate {
+  0% {
+    background-position: 0% 96%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 96%;
+  }
 }
 
 * {
